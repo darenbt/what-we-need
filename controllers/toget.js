@@ -42,7 +42,6 @@ module.exports = {
     }
   },
   deleteItem: async (req,res)=>{
-    console.log(req.body.togetIdFromJSFile)
     try{
       await Toget.findOneAndDelete({_id:req.body.togetIdFromJSFile})
       console.log('Deleted Item')

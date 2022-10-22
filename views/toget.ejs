@@ -7,7 +7,7 @@
       <% getThis.forEach( el => { %>
           <li class='togetItem' data-id='<%=el._id%>'>
               <span class='<%= el.completed === true ? 'completed item' : 'not item'%>'><%= el.toget %></span>
-              <span class='<%= el.completed === true ? 'completed fa-solid fa-circle-check' : 'not fa-solid fa-circle'%>'>
+              <span class='<%= el.completed === true ? 'completed fa-solid fa-circle-check' : 'not fa-solid fa-circle'%>'></span>
               <span class='del fa-solid fa-trash-can'></span>
           </li>
       <% }) %>
