@@ -1,0 +1,19 @@
+{
+  "name": "whatweneed",
+  "version": "1.0.0",
+  "description": "A grocery list checkoff app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DB Thurman",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mongodb": "^4.9.0",
+    "mongoose": "^6.5.2",
+    "nodemon": "^2.0.19"
+  }
+}

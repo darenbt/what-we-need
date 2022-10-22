@@ -1,0 +1,26 @@
+<%- include('partials/header') -%>
+<body>
+    <section class="image"></section>
+    <section class="container">
+      <h1>What We Need</h1>
+      <ul>
+      <% getThis.forEach( el => { %>
+          <li class='togetItem' data-id='<%=el._id%>'>
+              <span class='<%= el.completed === true ? 'completed item' : 'not item'%>'><%= el.toget %></span>
+              <span class='<%= el.completed === true ? 'completed fa-solid fa-circle-check' : 'not fa-solid fa-circle'%>'>
+              <span class='del fa-solid fa-trash-can'></span>
+          </li>
+      <% }) %>
+      </ul>
+
+      <h2 class="items-left">Items Left: <%= left %></h2>
+
+      <form action="/toget/createItem" method='POST'>
+          <input type="text" placeholder="What do we need?" name='togetItem'>
+          <div class="btn-container">
+            <button class="btn" type="submit"> Add Item </button>
+          </div>
+      </form>
+    </section>
+    <script src="js/main.js"></script>
+<%- include('partials/footer') -%>
