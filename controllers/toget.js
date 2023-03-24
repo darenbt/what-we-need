@@ -5,7 +5,9 @@ module.exports = {
     try {
       const togetItems = await Toget.find()
       const itemsLeft = await Toget.countDocuments({completed: false})
-      res.render('toget.ejs', {getThis: togetItems, left: itemsLeft})
+      res.json({ items: togetItems})
+      //don't need res.render for react
+      // res.render('toget.ejs', {getThis: togetItems, left: itemsLeft})
     }catch(err){
       console.log(err)
     }
@@ -13,8 +15,10 @@ module.exports = {
   createItem: async (req,res)=>{
     try{
       await Toget.create({toget: req.body.togetItem, completed: false })
-      console.log('New item has been added!')
-      res.redirect('/toget')
+      .then(result => {
+        console.log('New item has been added!')
+        res.json(result)
+      })
     }catch(err){
       console.log(err)
     }

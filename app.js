@@ -12,14 +12,14 @@ require('dotenv').config({path: './config/.env'})
 connectDB()
 
 // middleware
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs') //won't need view engine for react
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 // paths for routers
 app.use('/', homeRoutes)
-app.use('/toget', togetRoutes)
+app.use('/toget/api', togetRoutes)
 
 // starts the server
 app.listen(process.env.PORT, ()=>{
