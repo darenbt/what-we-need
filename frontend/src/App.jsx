@@ -46,27 +46,29 @@ function App() {
     setItems(items.filter(i => i._id !== item._id))
   }
 
+  const itemList = items.map((item, index) => (
+    <li key = {item._id} className = "togetItem">
+      <span className = {`${item.completed ? "completed " : "not "}item`} onClick = {event => markItem(event, item)}> {item.toget}</span>
+      <span className = {item.completed ? "completed fa-solid fa-circle-check" : "not fa-solid fa-circle"}></span>
+      <span className = "del fa-solid fa-trash-can" onClick = {event => deleteItem(event, item)}></span>
+    </li>
+  ))
+
   return (
     <>
       <img className="image" src={mainImage}/>
       <section className="container">
         <h1>What We Need</h1> 
          <ul>
-            {items.map((item, index) => (
-              <li key = {item._id} className = "togetItem">
-                <span className = {`${item.completed ? "completed " : "not "}item`} onClick = {event => markItem(event, item)}> {item.toget}</span>
-                <span className = {item.completed ? "completed fa-solid fa-circle-check" : "not fa-solid fa-circle"}></span>
-                <span className = "del fa-solid fa-trash-can" onClick = {event => deleteItem(event, item)}></span>
-              </li>
-            ))}
+            {itemList}
         </ul>
           
-        <h2 class="items-left">Items Left: {left}</h2>
+        <h2 className="items-left">Items Left: {left}</h2>
 
         <form action="/toget/api/createItem" method='POST' onSubmit = {handleSubmit}>
             <input type="text" placeholder="What do we need?" name='togetItem' />
-            <div class="btn-container">
-              <button class="btn" type="submit"> Add Item </button>
+            <div className="btn-container">
+              <button className="btn" type="submit"> Add Item </button>
             </div>
         </form>
       </section>
