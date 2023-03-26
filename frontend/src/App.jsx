@@ -58,7 +58,7 @@ function App() {
     <>
       <img className="image" src={mainImage}/>
       <section className="container">
-        <h1>What We Need</h1> 
+        <h1>Here's What We Need!</h1> 
          <ul>
             {itemList}
         </ul>
@@ -72,6 +72,9 @@ function App() {
             </div>
         </form>
       </section>
+      <div class="foot">
+      <span>&copy; <a target="_blank" href="https://dbthurman.netlify.app">DB Thurman</a></span>
+    </div>
     </>
   )
 }
