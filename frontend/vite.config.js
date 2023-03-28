@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/toget': {
+      '/toget/api': {
         target: 'http://localhost:5555',
         changeOrigin: true,
       }

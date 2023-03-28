@@ -14,11 +14,9 @@ module.exports = {
   },
   createItem: async (req,res)=>{
     try{
-      await Toget.create({toget: req.body.togetItem, completed: false })
-      .then(result => {
-        console.log('New item has been added!')
-        res.json(result)
-      })
+      const toget = await Toget.create({toget: req.body.togetItem, completed: false })
+      console.log('New item has been added!')
+      res.json(toget)
     }catch(err){
       console.log(err)
     }

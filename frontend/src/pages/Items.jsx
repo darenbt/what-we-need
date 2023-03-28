@@ -1,8 +1,8 @@
 import { useState, useEffect, useMemo} from 'react'
-import mainImage from './assets/image.svg'
-import './style.css'
+import mainImage from '../assets/image.svg'
+import '../style.css'
 
-function App() {
+function Items() {
   const [items, setItems] = useState([])
 
   useEffect(() => {
@@ -46,11 +46,9 @@ function App() {
     setItems(items.filter(i => i._id !== item._id))
   }
 
-  const itemList = items.map((item, index) => (
+  const itemList = items.map((item) => (
     <li key = {item._id} className = "togetItem">
-      <span className = {`${item.completed ? "completed " : "not "}item`} onClick = {event => markItem(event, item)}> {item.toget}</span>
-      <span className = {item.completed ? "completed fa-solid fa-circle-check" : "not fa-solid fa-circle"}></span>
-      <span className = "del fa-solid fa-trash-can" onClick = {event => deleteItem(event, item)}></span>
+      <span className = {`${item.completed ? "completed " : "not "}item`} onClick = {event => markItem(event, item)}> {item.toget}</span>   <span className = {item.completed ? "completed fa-solid fa-circle-check" : "not fa-solid fa-circle"} onClick = {event => markItem(event, item)}></span>   <span className = "del fa-solid fa-trash-can" onClick = {event => deleteItem(event, item)}></span>
     </li>
   ))
 
@@ -73,10 +71,10 @@ function App() {
         </form>
       </section>
       <div class="foot">
-      <span>&copy; <a target="_blank" href="https://dbthurman.netlify.app">DB Thurman</a></span>
+      <span>&copy; <a className="personal" target="_blank" href="https://dbthurman.netlify.app">DB Thurman</a></span>
     </div>
     </>
   )
 }
 
-export default App
+export default Items

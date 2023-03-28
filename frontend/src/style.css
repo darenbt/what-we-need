@@ -96,7 +96,7 @@ a {
   text-decoration: none;
 }
 
-a:visited {
+.personal:visited {
   color: green;
 }
 
