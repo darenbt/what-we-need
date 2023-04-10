@@ -14,7 +14,7 @@ connectDB()
 // middleware
 app.set('view engine', 'ejs') //won't need view engine for react
 // app.use(express.static('public'))
-app.use(express.static('frontend/dist'))
+app.use(express.static(__dirname + '/frontend/dist'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
