@@ -70,7 +70,7 @@ function Items() {
             </div>
         </form>
       </section>
-      <div class="foot">
+      <div className="foot">
       <span>&copy; <a className="personal" target="_blank" href="https://dbthurman.netlify.app">DB Thurman</a></span>
     </div>
     </>
