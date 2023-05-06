@@ -12,11 +12,11 @@ body {
 
 .image {
   width: 100%;
-  height: 300px;
+  height: 250px;
   /* background: no-repeat center url('/assets/image.svg'); */
-  position: absolute;
+  /* position: absolute; */
   /* top: 1px; */
-  bottom: 62%;
+  /* bottom: 62%; */
 }
 
 ul {
@@ -24,14 +24,15 @@ ul {
 }
 
 .container {
+  margin: auto;
   color: #05386B;
-  position: absolute;
-  margin-top: 1.25rem;
-  top: 50%;
-  left: 50%;
+  /* position: absolute; */
+  /* margin-top: 1rem; */
+  /* top: 50%;
+  left: 50%; */
   width: 600px;
   padding: 20px;
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
   background: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   display: flex;
@@ -43,6 +44,16 @@ h1{
   color: #FC4445;
   padding: 5px;
   font-size: 2rem;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+  }
+  
+  h1{
+    text-align: center;
+  }
 }
 
 .items-left {
@@ -123,7 +134,7 @@ a {
 
 }
 
-.foot {
+/* .foot {
   position: absolute;
   bottom: 1%;
-}
+} */
